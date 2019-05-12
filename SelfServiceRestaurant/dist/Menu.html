@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Menu</title>
+	
+	<script src="https://code.jquery.com/jquery-3.4.0.min.js"
+        integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+	
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <link   rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+</head>
+
+<body style="height:100vh;width:100vw;">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    
+<!--整體頁面-->
+<div id="Wrap">
+    <div class="sidebar">
+        <img src="./img/LOGO.png" id="LOGO">
+        <img src="./img/icon_member.png" class="icon" id="icon_member">
+        <img src="./img/icon_menu.png" class="icon" id="icon_menu">
+        <img src="./img/icon_map.png" class="icon" id="icon_map">
+    </div>
+
+    <!--可直接替換的html碼，範圍為右下大方格-->
+    <div id="wrapped_content">
+		
+		
+		<div class="mid_icon" id="visiter">
+			<img id="visiter_img" src="./img/工作區域 1.png" style="width:16vw; cursor: pointer;">
+		</div>
+		
+		<div class="mid_icon" id="memberlogin">
+			<img id="memberlogin_img" src="./img/工作區域 2.png" style="width:16vw; cursor: pointer;">
+		</div>
+		
+		<div class="mid_icon" id="registered">
+			<img id="registered_img" src="./img/工作區域 3.png" style="width:16vw; cursor: pointer;">
+		</div>
+
+		<div id="signin">
+			<img src="./img/工作區域 1 (2).png" id="signin_bg">
+			<form action="/signin" method="post">
+				<p id="signin_text">Sign in</p>
+				<button type="button" class="btn btn-secondary btn-lg button_step" id='signup1'>還不是會員？點此註冊</button>
+				<p id="mail_text">E-mail address</p>
+				<input id="mail_input" type="text" name="signin_mail" placeholder="Your Mail">
+				<p id="passward_text">Passward</p>
+				<input id="passward_input" type="text" name="signin_password" placeholder="Your Password">
+				<p id="forgetpassward_text">Forget passward?</p>
+				<!--<input type="submit" value="Sign in" class="btn btn-secondary btn-lg button_step" id='signinbotton'>-->
+				<button type="button" class="btn btn-secondary btn-lg button_step" id='signinbotton'>Sign in</button>
+				<button type="button" class="btn btn-secondary btn-lg button_step" id='fbbotton' onclick="fblogin()">使用facebook應用程式登入</button>
+			</form>
+		</div>
+
+		<div id="signup">
+			<img src="./img/工作區域 1 (2).png" id="signup_bg">
+			<form action="/signup" method="post">
+				<p id="signup_text">Sign up</p>
+				<button type="button" class="btn btn-secondary btn-lg button_step" id='signup2'>已經是會員？點此登入</button>
+				<p id="name_text_up">Username</p>
+				<input id="name_input_up" type="text" name="signup_name" placeholder="Your Name">  
+				<p id="mail_text_up">E-mail address</p>
+				<input id="mail_input_up" type="text" name="signup_mail" placeholder="Your Mail">
+				<p id="passward_text_up">Passward</p>
+				<input id="passward_input_up" type="password" name="signup_password" placeholder="Your Password">	
+				<!--<input type="submit" value="Sign up" class="btn btn-secondary btn-lg button_step" id='signupbotton'>-->
+				<button type="button" class="btn btn-secondary btn-lg button_step" id='signupbotton'>Sign up</button>
+				<button type="button" class="btn btn-secondary btn-lg button_step" id='fbbotton_up' onclick="fbregister()">使用facebook應用程式登入</button>
+			</form>
+		</div>
+		
+		
+        <div id="menu_region" class="menu_region" style="display:none;">
+            <div class="order_1"> 
+                <div class="img_set">
+                    <img src="./img/Burger1.png" id="burger_1">
+                    <img src="./img/icon_add_to_cart.png" id="add_1">
+                    <img src="./img/icon_add_to_cart_hover.png" id="add_1_button">
+                    <p id="rate_1">0</p>
+                </div>
+            </div>
+            <div class="order_2"> 
+                <div class="img_set">
+                    <img src="./img/Burger2.png" id="burger_2">
+                    <img src="./img/icon_add_to_cart.png" id="add_2">
+                    <img src="./img/icon_add_to_cart_hover.png" id="add_2_button">
+                    <p id="rate_2">0</p>
+                </div>
+            </div>
+            <div class="order_3"> 
+                <div class="img_set">
+                    <img src="./img/Burger3.png" id="burger_3">
+                    <img src="./img/icon_add_to_cart.png" id="add_3">
+                    <img src="./img/icon_add_to_cart_hover.png" id="add_3_button">
+                    <p id="rate_3">0</p>
+                </div>
+            </div>
+            <div class="order_4"> 
+                <div class="img_set">
+                    <img src="./img/Burger4.png" id="burger_4">
+                    <img src="./img/icon_add_to_cart.png" id="add_4">
+                    <img src="./img/icon_add_to_cart_hover.png" id="add_4_button">
+                    <p id="rate_4">0</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="cart_region" class="cart_region" style="display:none;">
+            <img src="./img/ordered_list.png" class="shopping_cart_bg">
+            <div class="container">
+                <div id="shopping_cart">
+                </div>
+            </div>
+            
+            <p id="total_cost">0</p>
+            <img src="./img/comfirm_and_pay.png" id="comfirm_and_pay_img">
+            <img src="./img/comfirm_and_pay_hover.png" id="comfirm_and_pay_btn" onclick="topay()">
+        </div>
+
+    </div>
+</div>
+
+<div id="cover"></div>
+
+<!--客製化頁面-->
+<div id="Custom_page">
+    <div class="content">
+        <p class="burger_name">漢堡名</p>
+        <img src="./img/custom.png" class="background">
+        <div class="detail">
+             <div class="set_choose">
+                <img src="./img/default.png" id="default">
+                <img src="img/history.png" id="history">
+            </div>
+            <div class="burger_pic">
+                <img src="./img/top_pic.png" class="pic">
+                <img src="./img/cheese_pic.png" id="cheese_pic" class="pic">
+                <img src="./img/tomato_pic.png" id="tomato_pic" class="pic">
+                <img src="./img/cucumber_pic.png" id="cucumber_pic" class="pic">
+                <img src="./img/meat_pic.png" id="meat_pic" class="pic">
+                <img src="./img/lettuce_pic.png" id="lettuce_pic" class="pic">
+                <img src="./img/bottom_pic.png" class="pic">
+            </div>
+            <div class="buger_op">
+                <img src="./img/cheese_op.png" id="cheese_op" class="tag">
+                <img src="./img/tomato_op.png" id="tomato_op" class="tag">
+                <img src="./img/cucumber_op.png" id="cucumber_op" class="tag">
+                <img src="./img/salmon_op.png" id="meat_op" class="tag">
+                <img src="./img/lettuce_op.png" id="lettuce_op" class="tag">
+            </div>
+            <div class="sauce_op">
+                <img src="./img/spicy_sauce.png" id="spicy_sauce" class="tag">
+                <img src="./img/wasabi_sauce.png" id="wasabi_sauce" class="tag">
+                <img src="./img/peanut_sauce.png" id="peanut_sauce" class="tag">
+                <img src="./img/no_sauce.png" id="no_sauce" class="tag">
+            </div>
+            <img src="./img/cancel.png" id="cancel">
+            <img src="./img/add_to_cart.png" id="add_to_cart">
+            <img src="./img/add.png" id="add">
+            <img src="./img/minus.png" id="minus">
+            <p id="amount"><b>1</b></p>
+        </div>
+
+    </div>
+</div>
+
+<!--地圖-->
+<div id="Map">
+    <img src="img/MAP.png" class="Map_img">
+</div>
+
+<!--MENU-->
+<div id="Menu">
+        <img src="img/MENU.png" class="Menu_img">
+</div>
+    
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="./script/min.js"></script>
+	<script src="./script/index0.js"></script>
+	<script src="./script/order.js"></script>
+
+
+    <!--為了用modal加的，出問題優先刪除-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</html>
